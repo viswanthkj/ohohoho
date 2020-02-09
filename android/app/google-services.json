@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "752755078866",
+    "firebase_url": "https://ohohoho-bdd3c.firebaseio.com",
+    "project_id": "ohohoho-bdd3c",
+    "storage_bucket": "ohohoho-bdd3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752755078866:android:2e6e7d1311fef2667e5f0b",
+        "android_client_info": {
+          "package_name": "com.ohohoho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752755078866-81nmignoapo13v96h6q6pcvl8e3tulp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVy-v-9ntuhSPkw1IinQSUblxH80sIR24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752755078866-81nmignoapo13v96h6q6pcvl8e3tulp9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

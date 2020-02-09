@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>752755078866-39ku0djajpe5ub3jvlk2euf2eosnno4q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.752755078866-39ku0djajpe5ub3jvlk2euf2eosnno4q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBPfphKAhQPxIOaJUvWXMZWW0GZ4cMJo6Y</string>
+	<key>GCM_SENDER_ID</key>
+	<string>752755078866</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ohohoho</string>
+	<key>PROJECT_ID</key>
+	<string>ohohoho-bdd3c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ohohoho-bdd3c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:752755078866:ios:df5bdb2b9bbb78be7e5f0b</string>
+	<key>DATABASE_URL</key>
+	<string>https://ohohoho-bdd3c.firebaseio.com</string>
+</dict>
+</plist>

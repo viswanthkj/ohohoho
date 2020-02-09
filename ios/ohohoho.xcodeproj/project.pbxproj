@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ohohohoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ohohohoTests.m */; };
+		124908CC23EFF5CB008810EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 124908CB23EFF5CB008810EA /* GoogleService-Info.plist */; };
 		12A19B40CBE6282DCFFE996F /* libPods-ohohoho-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97D04738E061C25BF6EF6D /* libPods-ohohoho-tvOS.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
@@ -46,6 +47,7 @@
 		00E356F21AD99517003FC87E /* ohohohoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ohohohoTests.m; sourceTree = "<group>"; };
 		04CBB318E67CDD86DE5D9C35 /* Pods-ohohoho-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ohohoho-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ohohoho-tvOSTests/Pods-ohohoho-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		1092941E9CDDAA174CA11398 /* Pods-ohohohoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ohohohoTests.debug.xcconfig"; path = "Target Support Files/Pods-ohohohoTests/Pods-ohohohoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		124908CB23EFF5CB008810EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ohohoho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ohohoho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ohohoho/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ohohoho/AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		13B07FAE1A68108700A75B9A /* ohohoho */ = {
 			isa = PBXGroup;
 			children = (
+				124908CB23EFF5CB008810EA /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -194,7 +197,6 @@
 				1092941E9CDDAA174CA11398 /* Pods-ohohohoTests.debug.xcconfig */,
 				8B0B04C591006A96BE35831B /* Pods-ohohohoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +310,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -338,6 +341,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				124908CC23EFF5CB008810EA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +639,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ohohoho;
 				PRODUCT_NAME = ohohoho;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -654,7 +658,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ohohoho;
 				PRODUCT_NAME = ohohoho;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
