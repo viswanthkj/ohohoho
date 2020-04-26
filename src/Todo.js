@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Button, Text} from 'react-native';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {changeCount} from './actions/counts';
+import {changeCount} from './actions/';
 
 class Todo extends Component {
   state = {count: 0};

@@ -11,16 +11,11 @@ import {
   BackHandler,
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
+import {connect} from 'react-redux';
 import auth from '@react-native-firebase/auth';
+import {saveUserEmail, saveUserPassword} from './actions/';
 
-export default class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-    };
-  }
+class Login extends Component {
   componentDidMount = () => {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
   };
@@ -34,7 +29,7 @@ export default class Login extends Component {
   }
 
   registerValidation = async () => {
-    const {email, password} = this.state;
+    const {email, password} = this.props;
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const passwordRegex = /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
     if (email && emailRegex.test(email)) {
@@ -62,7 +57,7 @@ export default class Login extends Component {
   };
 
   loginValidation = async () => {
-    const {email, password} = this.state;
+    const {email, password} = this.props;
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const passwordRegex = /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
     if (email && emailRegex.test(email)) {
@@ -91,7 +86,7 @@ export default class Login extends Component {
   };
 
   render() {
-    const {email, password} = this.state;
+    const {email, password} = this.props;
     return (
       <SafeAreaView style={styles.safeArea}>
         <ScrollView
@@ -104,7 +99,10 @@ export default class Login extends Component {
                 placeholder="Email"
                 keyboardType="email-address"
                 underlineColorAndroid="transparent"
-                onChangeText={text => this.setState({email: text})}
+                // onChangeText={text => this.setState({email: text})}
+                onChangeText={emailChange =>
+                  this.props.saveUserEmailAction(emailChange)
+                }
                 value={email}
               />
             </View>
@@ -114,7 +112,10 @@ export default class Login extends Component {
                 placeholder="Password"
                 secureTextEntry={true}
                 underlineColorAndroid="transparent"
-                onChangeText={text => this.setState({password: text})}
+                // onChangeText={text => this.setState({password: text})}
+                onChangeText={passwordChange =>
+                  this.props.saveUserPasswordAction(passwordChange)
+                }
                 value={password}
               />
             </View>
@@ -134,6 +135,25 @@ export default class Login extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    email: state.count.email,
+    password: state.count.password,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    saveUserEmailAction: email => dispatch(saveUserEmail(email)),
+    saveUserPasswordAction: password => dispatch(saveUserPassword(password)),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Login);
 
 const styles = StyleSheet.create({
   safeArea: {
