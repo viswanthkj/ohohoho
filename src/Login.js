@@ -10,6 +10,7 @@ import {
   ScrollView,
   BackHandler,
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 import auth from '@react-native-firebase/auth';
 
 export default class Login extends Component {
@@ -46,6 +47,7 @@ export default class Login extends Component {
           if (doLogin.user) {
             // navigation.navigate('Home');
             Alert.alert('Register Success');
+            Actions.todo();
             // Actions.mainApp();
           }
         } catch (e) {
@@ -73,6 +75,7 @@ export default class Login extends Component {
           if (doLogin.user) {
             // navigation.navigate('Home');
             Alert.alert('Login Success');
+            Actions.todo();
             // Actions.mainApp();
           }
         } catch (e) {
