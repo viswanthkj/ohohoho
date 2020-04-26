@@ -10,7 +10,7 @@ import {
   ScrollView,
   BackHandler,
 } from 'react-native';
-import {Actions} from 'react-native-router-flux';
+import auth from '@react-native-firebase/auth';
 
 export default class Login extends Component {
   constructor(props) {
@@ -31,19 +31,59 @@ export default class Login extends Component {
   onBackPress() {
     BackHandler.exitApp();
   }
-  loginValidation = () => {
+
+  registerValidation = async () => {
     const {email, password} = this.state;
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const passwordRegex = /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
     if (email && emailRegex.test(email)) {
       if (password && passwordRegex.test(password)) {
-        Alert.alert('Login Success');
-        // Actions.mainApp();
+        try {
+          const doLogin = await auth().createUserWithEmailAndPassword(
+            email,
+            password,
+          );
+          if (doLogin.user) {
+            // navigation.navigate('Home');
+            Alert.alert('Register Success');
+            // Actions.mainApp();
+          }
+        } catch (e) {
+          Alert.alert(e.message);
+        }
       } else {
-        Alert.alert('Invalid password', password);
+        Alert.alert('Invalid password to register', password);
       }
     } else {
-      Alert.alert('Invalid email', email);
+      Alert.alert('Invalid email to register', email);
+    }
+  };
+
+  loginValidation = async () => {
+    const {email, password} = this.state;
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const passwordRegex = /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    if (email && emailRegex.test(email)) {
+      if (password && passwordRegex.test(password)) {
+        try {
+          const doLogin = await auth().signInWithEmailAndPassword(
+            email,
+            password,
+          );
+          if (doLogin.user) {
+            // navigation.navigate('Home');
+            Alert.alert('Login Success');
+            // Actions.mainApp();
+          }
+        } catch (e) {
+          Alert.alert(e.message);
+        }
+        // Actions.mainApp();
+      } else {
+        Alert.alert('Invalid password to login', password);
+      }
+    } else {
+      Alert.alert('Invalid email to login', email);
     }
   };
 
@@ -79,6 +119,11 @@ export default class Login extends Component {
               style={[styles.buttonContainer, styles.loginButton]}
               onPress={() => this.loginValidation()}>
               <Text style={styles.loginText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.buttonContainer, styles.loginButton]}
+              onPress={() => this.registerValidation()}>
+              <Text style={styles.loginText}>Register</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
